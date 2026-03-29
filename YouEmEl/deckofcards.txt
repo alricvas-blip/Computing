@@ -1,0 +1,43 @@
+@startuml
+enum Suit {
+    HEARTS
+    DIAMONDS
+    CLUBS
+    SPADES
+}
+
+enum Rank {
+    TWO
+    THREE
+    FOUR
+    FIVE
+    SIX
+    SEVEN
+    EIGHT
+    NINE
+    TEN
+    JACK
+    QUEEN
+    KING
+    ACE
+}
+
+class Card {
+    - suit: Suit
+    - rank: Rank
+    + __init__(suit: Suit, rank: Rank)
+    + __repr__(): String
+}
+
+class Deck {
+    - cards: List<Card>
+    + __init__()
+    + shuffle()
+    + deal(): Card
+    + __len__(): Integer
+}
+
+Deck "1" *-- "52" Card
+Card --> Suit
+Card --> Rank
+@enduml
