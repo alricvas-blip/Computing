@@ -16,13 +16,12 @@ class Dragon:
     TailLength : float
     ColourofFireBreath : str
     NumberOfLegs : int
-    
 
     def print (self):
         print(f"Scale Colour: {self.ScaleColour}, Tail Length: {self.TailLength}, Colour of Fire Breath: {self.ColourofFireBreath}, Number of Legs: {self.NumberOfLegs}")
 
 @dataclass
-class TRex
+class TRex:
     sizeInM :float
     weightInKg : float
     numberOfTeeth : int
@@ -31,7 +30,7 @@ class TRex
         print(f"Size in M: {self.sizeInM}, Weight in Kg: {self.weightInKg}, Number of Teeth: {self.numberOfTeeth}")
 
 @dataclass
-class Minmi
+class Minmi:
     ScaleColour : str
     TailLength : float
     FootDiameterinCm : float
