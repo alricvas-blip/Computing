@@ -93,8 +93,7 @@ class Player:
 
     def display_hand(self):
         """Displays the player's hand, sorted for readability."""
-        print(f"
-{self.name}'s hand:")
+        print(f"\n{self.name}'s hand:")
         # Sort the hand using the helper function instead of a lambda.
         self.hand.sort(key=get_card_sort_key)
         
@@ -144,8 +143,7 @@ class Player:
         Selects 3 cards to pass. For this demo, it passes the 3 highest cards.
         This version uses a standard for-loop instead of a list comprehension.
         """
-        print(f"
-{self.name}: Choose 3 cards to pass.")
+        print(f"\n{self.name}: Choose 3 cards to pass.")
         self.display_hand()
         # To make this runnable, we'll auto-select the 3 highest cards.
         self.hand.sort(key=get_card_sort_key)
@@ -190,8 +188,7 @@ class Game:
         
         # 2. Passing Phase (Left Only)
         self.passing_phase()
-        print("
---- Hands after passing ---")
+        print("\n--- Hands after passing ---")
         for p in self.players:
             p.display_hand()
 
@@ -199,8 +196,7 @@ class Game:
         self.play_trick()
         
         # 4. Show results
-        print("
---- Results after one trick ---")
+        print("\n--- Results after one trick ---")
         for p in self.players:
             if len(p.captured_cards) > 0:
                 print(f"{p.name} captured: {p.captured_cards}")
@@ -212,8 +208,7 @@ class Game:
         Manages passing 3 cards to the left.
         This is simplified from the hearts4.py version.
         """
-        print("
---- Card Passing Phase (Passing Left) ---")
+        print("\n--- Card Passing Phase (Passing Left) ---")
         
         # This for-loop replaces the list comprehension from hearts4.py.
         all_passed = []
@@ -229,8 +224,7 @@ class Game:
 
     def play_trick(self):
         """Manages the logic for a single trick."""
-        print("
---- Playing a Trick ---")
+        print("\n--- Playing a Trick ---")
         
         # Find who has the 2 of Clubs to lead the first trick.
         # This loop structure replaces the 'any()' call from hearts4.py.
@@ -272,8 +266,7 @@ class Game:
                     winner = player
         
         # The winner captures the cards from the pile. This replaces scoring.
-        print(f"
-*** {winner.name} wins the trick with the {winning_card}! ***")
+        print(f"\n*** {winner.name} wins the trick with the {winning_card}! ***")
         captured = self.pile.clear()
         winner.captured_cards.extend(captured)
 
